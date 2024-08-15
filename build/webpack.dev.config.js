@@ -56,13 +56,14 @@ module.exports = {
             template: path.resolve(dirname, 'public/index.html')
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].[fullhash].css",
-            chunkFilename: "[id].[hash].css"
+            filename: "[name].css",
+            // chunkFilename: "[id].[hash].css"
         })
     ],
     devServer: {
         historyApiFallback: true,
         port: "8080",
+        host:'0.0.0.0',
         proxy: [
             {
                 context: ['/api'],
